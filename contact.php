@@ -31,13 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com'; // Replace with your SMTP server
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'ronyk010201@gmail.com'; // Replace with your email
-        $mail->Password   = 'lavy xcyv fisw gopr'; // Replace with your email password
+        $mail->Username   = 'your gmail id'; // Replace with your email
+        $mail->Password   = 'your app password'; // Replace with your email password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         //Recipients
-        $mail->setFrom('ronyk010201@gmail.com', 'Green Market Place');
+        $mail->setFrom('your gmail id', 'Green Market Place');
         $mail->addAddress($email, $name);
 
         // Content
