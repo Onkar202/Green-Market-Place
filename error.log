@@ -1,0 +1,236 @@
+[2024-10-17 09:34:11] Order inserted successfully. Order ID: 22
+[2024-10-17 09:34:11] Error in checkout process: Error inserting order item: Column 'price' cannot be null
+[2024-10-17 09:34:45] Order inserted successfully. Order ID: 23
+[2024-10-17 09:34:45] Error in checkout process: Error inserting order item: Column 'price' cannot be null
+[2024-10-17 09:36:38] Order inserted successfully. Order ID: 24
+[2024-10-17 09:36:38] Error in checkout process: Error inserting order item: Column 'price' cannot be null
+[2024-10-17 09:36:43] Order inserted successfully. Order ID: 25
+[2024-10-17 09:36:43] Error in checkout process: Error inserting order item: Column 'price' cannot be null
+[2024-10-17 09:36:58] Order inserted successfully. Order ID: 26
+[2024-10-17 09:36:58] Error in checkout process: Error inserting order item: Column 'price' cannot be null
+[2024-10-17 09:38:15] Order inserted successfully. Order ID: 27
+[2024-10-17 09:38:15] Processing item: Product ID: 3, Details: Array
+(
+    [quantity] => 1
+    [total_price] => 30
+)
+
+[2024-10-17 09:38:15] Error in checkout process: Error inserting order item: Cannot add or update a child row: a foreign key constraint fails (`gmp`.`order_items`, CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`))
+[2024-10-17 09:39:31] Order inserted successfully. Order ID: 28
+[2024-10-17 09:39:31] Processing item: Product ID: 3, Details: Array
+(
+    [quantity] => 1
+    [total_price] => 30
+)
+
+[2024-10-17 09:39:31] Error in checkout process: Product with ID 3 does not exist in the products table.
+[2024-10-17 09:40:34] Order inserted successfully. Order ID: 29
+[2024-10-17 09:40:34] Processing item: Product ID: 3, Details: Array
+(
+    [quantity] => 1
+    [total_price] => 30
+)
+
+[2024-10-17 09:40:34] Error in checkout process: Product with ID 3 does not exist in the products table.
+[2024-10-17 09:41:39] Error in checkout process: Invalid products in cart: Product ID 3: Does not exist, Product ID 2: Does not exist
+[2024-10-17 09:43:16] Error in checkout process: Invalid products in cart: Product ID 3: Does not exist, Product ID 2: Does not exist
+[2024-10-17 09:43:23] Error in checkout process: Invalid products in cart: Product ID 3: Does not exist, Product ID 2: Does not exist
+[2024-10-17 09:43:40] Order inserted successfully. Order ID: 30
+[2024-10-17 09:43:40] Error in checkout process: Error inserting order item: Cannot add or update a child row: a foreign key constraint fails (`gmp`.`order_items`, CONSTRAINT `order_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`))
+[2024-10-17 09:53:51] Order inserted successfully. Order ID: 31
+[2024-10-17 09:53:51] Inserted order item: Order ID: 31, Product ID: 3, Quantity: 1, Price: 0
+[2024-10-17 09:53:51] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-17 09:53:51] Inserted order item: Order ID: 31, Product ID: 4, Quantity: 1, Price: 0
+[2024-10-17 09:53:51] Updated product quantity: Product ID: 4, Quantity: 1
+[2024-10-17 09:53:51] Inserted order item: Order ID: 31, Product ID: 2, Quantity: 1, Price: 0
+[2024-10-17 09:53:51] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-17 09:53:51] Transaction committed successfully
+[2024-10-17 09:55:38] Order inserted successfully. Order ID: 32
+[2024-10-17 09:55:38] Inserted order item: Order ID: 32, Product ID: 2, Quantity: 1, Price: 0
+[2024-10-17 09:55:38] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-17 09:55:38] Inserted order item: Order ID: 32, Product ID: 3, Quantity: 1, Price: 0
+[2024-10-17 09:55:38] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-17 09:55:38] Inserted order item: Order ID: 32, Product ID: 5, Quantity: 1, Price: 0
+[2024-10-17 09:55:38] Updated product quantity: Product ID: 5, Quantity: 1
+[2024-10-17 09:55:38] Transaction committed successfully
+[2024-10-17 09:58:54] Error in checkout process: Invalid products in cart: Product ID 3: Does not exist
+[2024-10-17 09:59:18] Error in checkout process: Invalid products in cart: Product ID 3: Does not exist
+[2024-10-17 09:59:26] Error in checkout process: Invalid products in cart: Product ID 3: Does not exist
+[2024-10-17 10:00:07] Error in checkout process: Invalid products in cart: Product ID 3: Does not exist
+[2024-10-17 10:00:18] Error in checkout process: Invalid products in cart: Product ID 3: Does not exist
+[2024-10-17 10:00:34] Error in checkout process: Invalid products in cart: Product ID 3: Does not exist
+[2024-10-17 10:02:20] Order inserted successfully. Order ID: 33
+[2024-10-17 10:02:20] Inserted order item: Order ID: 33, Product ID: 4, Quantity: 1, Price: 0
+[2024-10-17 10:02:20] Updated product quantity: Product ID: 4, Quantity: 1
+[2024-10-17 10:02:20] Inserted order item: Order ID: 33, Product ID: 3, Quantity: 1, Price: 0
+[2024-10-17 10:02:20] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-17 10:02:20] Transaction committed successfully
+[2024-10-17 10:09:38] Order inserted successfully. Order ID: 34
+[2024-10-17 10:09:38] Error in checkout process: Error inserting order item: Column 'price' cannot be null
+[2024-10-17 10:10:47] Order inserted successfully. Order ID: 35
+[2024-10-17 10:10:47] Inserted order item: Order ID: 35, Product ID: 2, Quantity: 1, Price: 30
+[2024-10-17 10:10:47] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-17 10:10:47] Inserted order item: Order ID: 35, Product ID: 3, Quantity: 1, Price: 30
+[2024-10-17 10:10:47] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-17 10:10:47] Transaction committed successfully
+[2024-10-18 05:25:23] Order inserted successfully. Order ID: 36
+[2024-10-18 05:25:23] Inserted order item: Order ID: 36, Product ID: 2, Quantity: 1, Price: 30
+[2024-10-18 05:25:23] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-18 05:25:23] Inserted order item: Order ID: 36, Product ID: 3, Quantity: 1, Price: 30
+[2024-10-18 05:25:23] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-18 05:25:23] Transaction committed successfully
+[2024-10-18 05:29:39] Order inserted successfully. Order ID: 37
+[2024-10-18 05:29:39] Cart contents: Array
+(
+    [2] => Array
+        (
+            [quantity] => 1
+            [total_price] => 30
+        )
+
+    [3] => Array
+        (
+            [quantity] => 1
+            [total_price] => 30
+        )
+
+    [4] => Array
+        (
+            [quantity] => 1
+            [total_price] => 100
+        )
+
+)
+
+[2024-10-18 05:29:39] Inserted order item: Order ID: 37, Product ID: 2, Quantity: 1, Price: 30
+[2024-10-18 05:29:39] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-18 05:29:39] Inserted order item: Order ID: 37, Product ID: 3, Quantity: 1, Price: 30
+[2024-10-18 05:29:39] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-18 05:29:39] Inserted order item: Order ID: 37, Product ID: 4, Quantity: 1, Price: 100
+[2024-10-18 05:29:39] Updated product quantity: Product ID: 4, Quantity: 1
+[2024-10-18 05:29:39] Updated order totals: Order ID: 37, Total Quantity: 3, Total Price: 160
+[2024-10-18 05:29:39] Transaction committed successfully
+[2024-10-18 05:31:18] Order inserted successfully. Order ID: 38
+[2024-10-18 05:31:18] Cart contents: Array
+(
+    [2] => Array
+        (
+            [quantity] => 1
+            [total_price] => 30
+        )
+
+    [4] => Array
+        (
+            [quantity] => 1
+            [total_price] => 100
+        )
+
+    [90] => Array
+        (
+            [quantity] => 1
+            [total_price] => 100
+        )
+
+)
+
+[2024-10-18 05:31:18] Inserted order item: Order ID: 38, Product ID: 2, Quantity: 1, Price: 30
+[2024-10-18 05:31:18] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-18 05:31:18] Inserted order item: Order ID: 38, Product ID: 4, Quantity: 1, Price: 100
+[2024-10-18 05:31:18] Updated product quantity: Product ID: 4, Quantity: 1
+[2024-10-18 05:31:18] Inserted order item: Order ID: 38, Product ID: 90, Quantity: 1, Price: 100
+[2024-10-18 05:31:18] Updated product quantity: Product ID: 90, Quantity: 1
+[2024-10-18 05:31:18] Updated order totals: Order ID: 38, Total Quantity: 3, Total Price: 230
+[2024-10-18 05:31:18] Transaction committed successfully
+[2024-10-18 05:34:27] Order inserted successfully. Order ID: 39
+[2024-10-18 05:34:27] Processing product ID: 2
+[2024-10-18 05:34:27] Inserted order item: Order ID: 39, Product ID: 2, Quantity: 1, Price: 30
+[2024-10-18 05:34:27] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-18 05:34:27] Processing product ID: 3
+[2024-10-18 05:34:27] Inserted order item: Order ID: 39, Product ID: 3, Quantity: 1, Price: 30
+[2024-10-18 05:34:27] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-18 05:34:27] Processing product ID: 6
+[2024-10-18 05:34:27] Inserted order item: Order ID: 39, Product ID: 6, Quantity: 1, Price: 100
+[2024-10-18 05:34:27] Updated product quantity: Product ID: 6, Quantity: 1
+[2024-10-18 05:34:27] Updated order totals: Order ID: 39, Total Quantity: 3, Total Price: 160
+[2024-10-18 05:34:27] Transaction committed successfully
+[2024-10-18 06:42:48] Order inserted successfully. Order ID: 40
+[2024-10-18 06:42:48] Processing product ID: 2
+[2024-10-18 06:42:48] Inserted order item: Order ID: 40, Product ID: 2, Quantity: 1, Price: 30
+[2024-10-18 06:42:48] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-18 06:42:48] Processing product ID: 3
+[2024-10-18 06:42:48] Inserted order item: Order ID: 40, Product ID: 3, Quantity: 1, Price: 30
+[2024-10-18 06:42:48] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-18 06:42:48] Processing product ID: 4
+[2024-10-18 06:42:48] Inserted order item: Order ID: 40, Product ID: 4, Quantity: 1, Price: 100
+[2024-10-18 06:42:48] Updated product quantity: Product ID: 4, Quantity: 1
+[2024-10-18 06:42:48] Updated order totals: Order ID: 40, Total Quantity: 3, Total Price: 160
+[2024-10-18 06:42:48] Transaction committed successfully
+[2024-10-18 06:49:44] Order inserted successfully. Order ID: 41
+[2024-10-18 06:49:44] Processing product ID: 2
+[2024-10-18 06:49:44] Inserted order item: Order ID: 41, Product ID: 2, Quantity: 1, Price: 30, Total Price: 30
+[2024-10-18 06:49:44] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-18 06:49:44] Processing product ID: 3
+[2024-10-18 06:49:44] Inserted order item: Order ID: 41, Product ID: 3, Quantity: 1, Price: 30, Total Price: 30
+[2024-10-18 06:49:44] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-18 06:49:44] Processing product ID: 4
+[2024-10-18 06:49:44] Inserted order item: Order ID: 41, Product ID: 4, Quantity: 1, Price: 100, Total Price: 100
+[2024-10-18 06:49:44] Updated product quantity: Product ID: 4, Quantity: 1
+[2024-10-18 06:49:44] Processing product ID: 6
+[2024-10-18 06:49:44] Inserted order item: Order ID: 41, Product ID: 6, Quantity: 1, Price: 100, Total Price: 100
+[2024-10-18 06:49:44] Updated product quantity: Product ID: 6, Quantity: 1
+[2024-10-18 06:49:44] Updated order totals: Order ID: 41, Total Quantity: 4, Total Price: 260
+[2024-10-18 06:49:44] Transaction committed successfully
+[2024-10-18 08:00:26] Order inserted successfully. Order ID: 42
+[2024-10-18 08:00:26] Processing product ID: 2
+[2024-10-18 08:00:26] Inserted order item: Order ID: 42, Product ID: 2, Quantity: 1, Price: 30, Total Price: 30
+[2024-10-18 08:00:26] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-18 08:00:26] Processing product ID: 3
+[2024-10-18 08:00:26] Inserted order item: Order ID: 42, Product ID: 3, Quantity: 1, Price: 30, Total Price: 30
+[2024-10-18 08:00:26] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-18 08:00:26] Updated order totals: Order ID: 42, Total Quantity: 2, Total Price: 60
+[2024-10-18 08:00:26] Transaction committed successfully
+[2024-10-18 08:03:58] Order inserted successfully. Order ID: 43
+[2024-10-18 08:03:58] Processing product ID: 2
+[2024-10-18 08:03:58] Inserted order item: Order ID: 43, Product ID: 2, Quantity: 1, Price: 30, Total Price: 30
+[2024-10-18 08:03:58] Updated product quantity: Product ID: 2, Quantity: 1
+[2024-10-18 08:03:58] Processing product ID: 3
+[2024-10-18 08:03:58] Inserted order item: Order ID: 43, Product ID: 3, Quantity: 1, Price: 30, Total Price: 30
+[2024-10-18 08:03:58] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-18 08:03:58] Processing product ID: 4
+[2024-10-18 08:03:59] Inserted order item: Order ID: 43, Product ID: 4, Quantity: 1, Price: 100, Total Price: 100
+[2024-10-18 08:03:59] Updated product quantity: Product ID: 4, Quantity: 1
+[2024-10-18 08:03:59] Updated order totals: Order ID: 43, Total Quantity: 3, Total Price: 160
+[2024-10-18 08:03:59] Transaction committed successfully
+[2024-10-18 08:07:50] Order inserted successfully. Order ID: 44
+[2024-10-18 08:07:50] Processing product ID: 3
+[2024-10-18 08:07:50] Inserted order item: Order ID: 44, Product ID: 3, Quantity: 1, Price: 30, Total Price: 30
+[2024-10-18 08:07:50] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-18 08:07:50] Processing product ID: 4
+[2024-10-18 08:07:50] Inserted order item: Order ID: 44, Product ID: 4, Quantity: 1, Price: 100, Total Price: 100
+[2024-10-18 08:07:50] Updated product quantity: Product ID: 4, Quantity: 1
+[2024-10-18 08:07:50] Updated order totals: Order ID: 44, Total Quantity: 2, Total Price: 130
+[2024-10-18 08:07:50] Transaction committed successfully
+[2024-10-18 08:50:34] Order inserted successfully. Order ID: 45
+[2024-10-18 08:50:34] Processing product ID: 2
+[2024-10-18 08:50:34] Inserted order item: Order ID: 45, Product ID: 2, Quantity: 5, Price: 30, Total Price: 150
+[2024-10-18 08:50:34] Updated product quantity: Product ID: 2, Quantity: 5
+[2024-10-18 08:50:34] Processing product ID: 3
+[2024-10-18 08:50:34] Inserted order item: Order ID: 45, Product ID: 3, Quantity: 7, Price: 30, Total Price: 210
+[2024-10-18 08:50:34] Updated product quantity: Product ID: 3, Quantity: 7
+[2024-10-18 08:50:34] Processing product ID: 4
+[2024-10-18 08:50:34] Inserted order item: Order ID: 45, Product ID: 4, Quantity: 1, Price: 100, Total Price: 100
+[2024-10-18 08:50:34] Updated product quantity: Product ID: 4, Quantity: 1
+[2024-10-18 08:50:34] Processing product ID: 6
+[2024-10-18 08:50:34] Inserted order item: Order ID: 45, Product ID: 6, Quantity: 1, Price: 100, Total Price: 100
+[2024-10-18 08:50:34] Updated product quantity: Product ID: 6, Quantity: 1
+[2024-10-18 08:50:34] Updated order totals: Order ID: 45, Total Quantity: 14, Total Price: 560
+[2024-10-18 08:50:34] Transaction committed successfully
+[2024-10-18 09:45:12] Order inserted successfully. Order ID: 46
+[2024-10-18 09:45:12] Processing product ID: 2
+[2024-10-18 09:45:12] Inserted order item: Order ID: 46, Product ID: 2, Quantity: 5, Price: 30, Total Price: 150
+[2024-10-18 09:45:12] Updated product quantity: Product ID: 2, Quantity: 5
+[2024-10-18 09:45:12] Processing product ID: 3
+[2024-10-18 09:45:12] Inserted order item: Order ID: 46, Product ID: 3, Quantity: 1, Price: 30, Total Price: 30
+[2024-10-18 09:45:12] Updated product quantity: Product ID: 3, Quantity: 1
+[2024-10-18 09:45:12] Updated order totals: Order ID: 46, Total Quantity: 6, Total Price: 180
+[2024-10-18 09:45:12] Transaction committed successfully

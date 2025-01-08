@@ -1,0 +1,80 @@
+[2024-10-18 06:36:44] POST data: Array
+(
+)
+
+[2024-10-18 06:36:44] Invalid request method: GET
+[2024-10-18 06:36:50] POST data: Array
+(
+)
+
+[2024-10-18 06:36:50] Invalid request method: GET
+[2024-10-18 06:37:18] POST data: Array
+(
+)
+
+[2024-10-18 06:37:18] Invalid request method: GET
+[2024-10-18 06:38:46] Request Method: GET
+[2024-10-18 06:38:46] POST data: Array
+(
+)
+
+[2024-10-18 06:38:46] GET data: Array
+(
+    [product_id] => 2
+    [quantity] => 1
+)
+
+[2024-10-18 06:38:46] Raw input: 
+[2024-10-18 06:38:46] Invalid request method: GET
+[2024-10-18 06:38:52] Request Method: GET
+[2024-10-18 06:38:52] POST data: Array
+(
+)
+
+[2024-10-18 06:38:52] GET data: Array
+(
+    [product_id] => 2
+    [quantity] => 1
+)
+
+[2024-10-18 06:38:52] Raw input: 
+[2024-10-18 06:38:52] Invalid request method: GET
+[2024-10-18 06:39:42] Request Method: GET
+[2024-10-18 06:39:42] POST data: Array
+(
+)
+
+[2024-10-18 06:39:42] GET data: Array
+(
+    [product_id] => 2
+    [quantity] => 1
+)
+
+[2024-10-18 06:39:42] Raw input: 
+[2024-10-18 06:39:42] Invalid request method: GET
+[2024-10-18 06:40:13] Request Method: GET
+[2024-10-18 06:40:13] POST data: Array
+(
+)
+
+[2024-10-18 06:40:13] GET data: Array
+(
+    [product_id] => 2
+    [quantity] => 1
+)
+
+[2024-10-18 06:40:13] Raw input: 
+[2024-10-18 06:40:13] Invalid request method: GET
+[2024-10-18 06:40:17] Request Method: GET
+[2024-10-18 06:40:17] POST data: Array
+(
+)
+
+[2024-10-18 06:40:17] GET data: Array
+(
+    [product_id] => 3
+    [quantity] => 1
+)
+
+[2024-10-18 06:40:17] Raw input: 
+[2024-10-18 06:40:17] Invalid request method: GET
