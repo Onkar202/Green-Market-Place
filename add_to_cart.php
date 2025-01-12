@@ -33,18 +33,16 @@ if (isset($_GET['product_id']) && isset($_GET['quantity'])) {
         // Calculate total items and total price
         $_SESSION['total_items'] = array_sum(array_column($_SESSION['cart'], 'quantity'));
         $_SESSION['total_price'] = array_sum(array_column($_SESSION['cart'], 'total_price'));
-    }
 
-    // After adding to cart, redirect back to the index page with the category
-    $redirect_url = 'index.php';
-    if ($category) {
-        $redirect_url .= "?category=$category";
+        // Return JSON response
+        echo json_encode([
+            'total_items' => $_SESSION['total_items'],
+            'total_price' => $_SESSION['total_price']
+        ]);
+    } else {
+        echo json_encode(['error' => 'Product not found']);
     }
-    header("Location: $redirect_url");
-    exit();
 } else {
-    // Handle error
-    header("Location: index.php");
-    exit();
+    echo json_encode(['error' => 'Invalid request']);
 }
 ?>

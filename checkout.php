@@ -83,13 +83,13 @@ function sendOrderConfirmationEmail($user_id, $order_id, $total_quantity, $total
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'ronyk010201@gmail.com';
-        $mail->Password   = 'lavy xcyv fisw gopr';
+        $mail->Username   = 'your gmail id';
+        $mail->Password   = 'your ';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Recipients
-        $mail->setFrom('ronyk010201@gmail.com', 'Green Market Place');
+        $mail->setFrom('your gmail id', 'Green Market Place');
         $mail->addAddress($user_email, $user_name);
 
         // Content
