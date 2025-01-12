@@ -21,7 +21,10 @@ if (isset($_SESSION['order_success'])) {
 // Get the selected category from the URL parameter
 $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
 
+// Get the search query from the URL parameter
+$searchQuery = isset($_GET['query']) ? $_GET['query'] : '';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,7 +103,7 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php">
-                    <img src="images/logo/logo.png" alt="logo" class="logo" style="width: 50px; height: auto;"/>
+                    <img src="images/logo/logo.png" alt="logo" class="logo" style="width: 50px; height: auto;" />
                     <span class="ms-2 fw-bold text-success">Green Market Place</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -123,6 +126,13 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
                             <a class="nav-link" href="Admin/index.php">Admin</a>
                         </li>
                     </ul>
+
+                    <!-- Search Bar in the Center -->
+                    <form class="d-flex mx-auto" style="width: 40%;" action="index.php" method="GET">
+                        <input class="form-control me-2" type="search" placeholder="Search for products..." aria-label="Search" name="query" value="<?php echo htmlspecialchars($searchQuery); ?>">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link" href="cart.php">
@@ -159,14 +169,10 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
             </div>
         </nav>
 
-       
-
-        <!-- third Child -->
         <div class="bg-transparent">
             <h3 class="text-center">Green Market Place</h3>
         </div>
 
-        <!-- fourth Child -->
         <div class="row">
             <?php
                 // Fetch categories
@@ -185,8 +191,7 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
                 
                     while($row = $result->fetch_assoc()){
                         $activeClass = ($selectedCategory == $row['cat_id']) ? 'active' : '';
-                        echo "                     
-                        <li class='nav-item'>
+                        echo "                      <li class='nav-item'>
                             <a href='index.php?category={$row['cat_id']}' class='nav-link text-light $activeClass'>{$row['cat_name']}</a>
                         </li>";
                     }
@@ -197,34 +202,46 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
                     </li>";
                 }
             ?>
+
             <!-- Products -->
             <div class="col-md-10">
                 <div class="row">
-                    <?php
-                    // Fetch products from the database
+                <?php
+                    // Base SQL query
                     $product_sql = "SELECT pr_id, pr_name, pr_img, pr_desc, pr_price FROM products WHERE active = 1";
+
                     if ($selectedCategory) {
                         $product_sql .= " AND pr_category = ?";
                     }
-
-                    // Prepare statement and check for errors
+                    
+                    if ($searchQuery) {
+                        $product_sql .= " AND pr_name LIKE ?";
+                    }
+                    
+                    // Add ORDER BY RAND() at the end of the query
+                    $product_sql .= " ORDER BY RAND()";
+                    
                     $stmt = $con->prepare($product_sql);
                     if (!$stmt) {
-                        // Handle preparation error
                         die("Error preparing statement: " . $con->error);
                     }
-
-                    // Execute with or without category parameter
-                    if ($selectedCategory) {
+                    
+                    if ($selectedCategory && $searchQuery) {
+                        $searchTerm = "%$searchQuery%";  // Create a new variable for search query
+                        $stmt->bind_param("is", $selectedCategory, $searchTerm);  // Bind the parameters correctly
+                    } elseif ($selectedCategory) {
                         $stmt->bind_param("i", $selectedCategory);
+                    } elseif ($searchQuery) {
+                        $searchTerm = "%$searchQuery%";  // Create a new variable for search query
+                        $stmt->bind_param("s", $searchTerm);  // Bind the search parameter
                     }
-
+                    
                     if (!$stmt->execute()) {
-                        // Handle execution error
                         die("Error executing statement: " . $stmt->error);
                     }
-
+                    
                     $product_result = $stmt->get_result();
+                    
 
                     if ($product_result === false) {
                         echo "Error: " . $con->error;
@@ -237,12 +254,11 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
                                     <div class='card-body'>
                                         <h5 class='card-title'>{$product['pr_name']}</h5>
                                         <p class='card-text'><strong>Price: ₹ {$product['pr_price']} per kg</strong></p>
-                                        <!-- Quantity selection -->
                                         <div class='mb-2'>
                                             <label for='quantity_{$product['pr_id']}'>Quantity (kg):</label>
                                             <input type='number' id='quantity_{$product['pr_id']}' name='quantity' min='1' max='100' value='1' class='form-control' style='width: 80px; display: inline-block;' />
                                         </div>
-                                        <button class='btn btn-success' onclick='addToCart({$product['pr_id']}, \"{$selectedCategory}\")'>Add to cart</button>
+                                        <button type='button' class='btn btn-success' onclick='addToCart({$product['pr_id']}, \"{$selectedCategory}\")'>Add to cart</button>
                                         <button class='btn btn-secondary' data-bs-toggle='modal' data-bs-target='#productModal' 
                                                 data-id='{$product['pr_id']}' 
                                                 data-name='{$product['pr_name']}' 
@@ -258,7 +274,7 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
                         echo "<p>No products available.</p>";
                     }
                     $stmt->close();
-                    ?>
+                ?>
                 </div>
             </div>
         </div>
@@ -296,7 +312,22 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
         function addToCart(productId, category) {
             const quantity = document.getElementById('quantity_' + productId).value;
             const url = isUserLoggedIn ? `add_to_cart.php?product_id=${productId}&quantity=${quantity}&category=${category}` : 'login.php';
-            window.location.href = url;
+
+            if (isUserLoggedIn) {
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.error) {
+                            alert(data.error);
+                        } else {
+                            document.querySelector('.fa-cart-shopping + .badge').textContent = data.total_items;
+                            document.querySelector('.nav-link[href="#"]').textContent = `Total: ₹${data.total_price.toFixed(2)}`;
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            } else {
+                window.location.href = url;
+            }
         }
     </script>
 
@@ -325,7 +356,7 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : null;
             });
         });
     </script>
-
+    
     <script>
         // Pass PHP login status to JavaScript
         const isUserLoggedIn = <?php echo json_encode(isUserLoggedIn()); ?>;
